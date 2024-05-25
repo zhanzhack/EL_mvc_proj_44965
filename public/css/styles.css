@@ -1,0 +1,106 @@
+
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.trainings-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+
+}
+
+.training-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.training-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 1400px;
+    
+}
+
+.training-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.training-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.training-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.training-info {
+    padding: 15px;
+}
+
+.training-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+.training-info p {
+    margin: 5px 0;
+}
+
+.training-info span {
+    font-weight: bold;
+    color: #555;
+}
+
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #fff;
+}
+
+.save-changes-button {
+    background-color: #007BFF;
+}
+
+.delete-button {
+    background-color: #FF0000;
+}

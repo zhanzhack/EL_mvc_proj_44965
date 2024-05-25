@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Training</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="container">
+        <h1>Edit Training</h1>
+        <div class="form-container">
+            <img src="/<%= training.image %>" alt="<%= training.name %> Image" class="training-image">
+            <form action="/trainings/<%= training._id %>/edit" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="<%= training.name %>" required>
+                </div>
+                <div>
+                    <label for="type">Type:</label>
+                    <input type="text" id="type" name="type" value="<%= training.type %>" required>
+                </div>
+                <div>
+                    <label for="intensity">Intensity:</label>
+                    <input type="text" id="intensity" name="intensity" value="<%= training.intensity %>" required>
+                </div>
+                <div>
+                    <label for="duration">Duration (minutes):</label>
+                    <input type="number" id="duration" name="duration" value="<%= training.duration %>" required>
+                </div>
+                <div>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" value="<%= training.city %>" required>
+                </div>
+                <div>
+                    <label for="place">Place:</label>
+                    <input type="text" id="place" name="place" value="<%= training.place %>" required>
+                </div>
+                <div>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" value="<%= training.date.toISOString().substr(0, 10) %>" required>
+                </div>
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description"><%= training.description %></textarea>
+                </div>
+                <div>
+                    <label for="image">Image:</label>
+                    <input type="file" id="image" name="image">
+                </div>
+                <button type="submit" class="save-changes-button">Save Changes</button>
+            </form>
+        </div>
+        <form action="/trainings/<%= training._id %>/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete this training?');">
+            <button type="submit" class="delete-button">Delete Training</button>
+        </form> 
+    </div>
+</body>
+</html>
+
+

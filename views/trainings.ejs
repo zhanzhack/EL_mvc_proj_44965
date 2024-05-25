@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trainings</title>
+
+
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainings</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="container">
+        <h1>Fitness Workout</h1>
+
+        <div class="trainings-list">
+            <% trainings.forEach(function(training) { %>
+                <a href="/trainings/<%= training._id %>" class="training-link">
+                    <div class="training-card"> 
+                        <img src="/<%= training.image %>" alt="<%= training.name %> Image" class="training-image">
+                        <div class="training-info">
+                            <h2><%= training.name %></h2>
+                            <p><span>Type:</span> <%= training.type %></p>
+                            <p><span>City:</span> <%= training.city %></p>
+                            <p><span>Place:</span> <%= training.place %></p>
+                            <p><span>Duration:</span> <%= training.duration %> minutes</p>
+                            <p><span>Date:</span> <%= training.date.toDateString() %></p>
+                        </div>
+                    </div>
+                </a>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>
+

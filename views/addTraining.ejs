@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Training</title>
+    <style>
+.add-training-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-training-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.add-training-form .form-group {
+    margin-bottom: 15px;
+}
+
+.add-training-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.add-training-form input,
+.add-training-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.add-training-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-training-form button:hover {
+    background-color: #0056b3;
+}
+</style>
+
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="container add-training-container">
+        <h1>Add Training</h1>
+        <form class="add-training-form" action="/trainings" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Training Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="type">Type:</label>
+                <input type="text" id="type" name="type" required>
+            </div>
+            <div class="form-group">
+                <label for="intensity">Intensity:</label>
+                <input type="text" id="intensity" name="intensity" required>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration (minutes):</label>
+                <input type="number" id="duration" name="duration" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="place">Place:</label>
+                <input type="text" id="place" name="place" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <button type="submit">Add Training</button>
+        </form>
+    </div>
+</body>
+</html>

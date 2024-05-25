@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trainings</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .search-form {
+            margin: 20px 0;
+        }
+
+        .search-input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+
+        .trainings-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .trainings-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+        }
+
+        .trainings-list li:last-child {
+            border-bottom: none;
+        }
+
+        .trainings-list a {
+            text-decoration: none;
+            color: #333;
+            flex: 1;
+            transition: background-color 0.3s;
+        }
+
+        .trainings-list a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .training-image {
+            max-width: 100%;
+            height: auto;
+            flex: 0.2;
+            margin-right: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .training-details {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .training-details span {
+            font-size: 18px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .training-details .training-type {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .training-details .training-city {
+            color: #28a745;
+        }
+
+        .training-details .training-date {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <div class="search-container">
+        <h1>Find Your Ideal Workout</h1>
+    
+        <form action="/" method="GET" class="search-form">
+            <input type="text" name="search" placeholder="Search for trainings" class="search-input">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    
+        <ul class="trainings-list">
+            <% if (trainings.length > 0) { %>
+                <% trainings.forEach(training => { %>
+                    <li>
+                        <a href="/trainings/<%= training._id %>">
+                            <img src="<%= training.image %>" alt="Training Image" class="training-image">
+                            <div class="training-details">
+                                <%= training.name %>
+                                <span>
+                                    <span class="training-type"><%= training.type %></span> - 
+                                    <span class="training-city"><%= training.city %></span> - 
+                                    <span class="training-date"><%= training.date.toDateString() %></span>
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                <% }); %>
+            <% } else { %>
+                <li>No trainings found</li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 50px;
+            margin-top: 50px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex; 
+        }
+
+        .form-container {
+            flex: 1; 
+            padding-right: 20px; 
+            max-width: 300px;
+
+        }
+
+        .image-container {
+            flex: 0.5; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .training-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+        .login-form{
+            margin-top: 30px;
+            text-align: center;
+
+        }
+        .login-text{
+            text-align: center;
+        }
+        .login-link{
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="container">
+        <div class="form-container">
+            <h1 class="login-text">Login</h1>
+            <form action="/login" method="POST" class="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+                <h3 class="login-link"><a href="/register">Do not have account? Create</a></h3>
+
+            </form>
+
+        </div>
+        <div class="image-container">
+            <img src="/images/logo.png" alt="Login Image" class="training-image">
+        </div>
+    </div>
+</body>
+</html>
+
+

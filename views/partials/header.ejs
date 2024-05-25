@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+    
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo {
+            height: 65px; 
+            margin-right: 20px; 
+        }
+
+        header a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        header .right-links {
+            display: flex;
+            align-items: center;
+        }
+
+        header .right-links a {
+            margin-left: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            font-size: 20px; 
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; 
+        }
+
+        nav a:hover {
+            background-color: #555; 
+        }
+
+        .right-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .right-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; 
+        }
+
+        .right-links a:hover {
+            background-color: #555; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">
+                <img src="/images/logo.png" alt="Logo" class="logo">
+            </a>
+            <a href="/trainings">Trainings</a>
+            <a href="/trainings/add">Add Training</a>
+        </nav>
+        <div class="right-links">
+            <% if (user) { %>
+                <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                </form>
+                <a href="#"><%= user.username %></a>
+                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+            <% } else { %>
+                <a href="/register">Register</a>
+                <a href="/login">Login</a>
+            <% } %>
+        </div>
+    </header>
+</body>
+</html>
+
+
+
+
+
