@@ -1,11 +1,5 @@
 # EL_mvc_proj_44965
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Implemented Features](#implemented-features)
-- [Usage Instructions](#usage-instructions)
-- [Additional Files](#additional-files)
-
 ## Project Overview
 This project is a fitness training management application built using Node.js, following the MVC (Model-View-Controller) architectural pattern. The application features server-side rendering (SSR) to dynamically generate and serve HTML content.
 
